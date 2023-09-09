@@ -18,7 +18,7 @@ void showOption(id) async {
           onTap: () {
             Get.back();
             Get.toNamed(
-              Routes.UPDATE_PRODUCT,
+              Routes.UPDATE_MAHASISWA
               arguments: id,
             );
           },
@@ -27,7 +27,7 @@ void showOption(id) async {
         ListTile(
           onTap: () {
             Get.back();
-            controller.deleteProduct(id);
+            controller.deleteMahasiswa(id);
           },
           title: Text('Delete'),
         ),

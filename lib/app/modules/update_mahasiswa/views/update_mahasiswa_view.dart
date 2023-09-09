@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/update_product_controller.dart';
+import '../controllers/update_mahasiswa_controller.dart';
 
-class UpdateProductView extends GetView<UpdateProductController> {
-  const UpdateProductView({Key? key}) : super(key: key);
+class UpdateMahasiswaView extends GetView<UpdateMahasiswaController> {
+  const UpdateMahasiswaView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UpdateProductView'),
+        title: const Text('UpdateMahasiswaView'),
         centerTitle: true,
       ),
 
@@ -20,8 +20,14 @@ class UpdateProductView extends GetView<UpdateProductController> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done){
          var data = snapshot.data!.data() as Map<String, dynamic>;
+         controller.cNpm.text = data['npm'];
          controller.cNama.text = data['name'];
-         controller.cHarga.text = data['price'].toString();
+         controller.cAlamat.text = data['address'];
+         controller.cProgram_studi.text = data['study'];
+         controller.cJk.text = data['gender'];
+
+
+
      
       return Padding(
         padding: EdgeInsets.all(8),
